@@ -1,0 +1,36 @@
+.fitImg{
+    position: absolute;
+    z-index: -100;
+}
+.logo{
+    height:30px;
+    width:30px;
+}
+
+.box__title{
+    top: 50%;
+    left:50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    margin:0;
+    padding:0;
+    color: rgba(255, 255, 255, 0.74);
+    font-size: 100px;
+    font-family: arial, sans-serif;
+    z-index: 100;
+}
+.visible-xs{
+    font-size:35px;
+}
+.box{
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+}
+.hover_menu{
+    font-family: Verdana, "游ゴシック", YuGothic, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif !important;
+}
+
+.mouseOver{
+    color:#4169e1 !important;
+}

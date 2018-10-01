@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+   <meta charset="UTF-8">
+   <title>timer作成</title>
+   <style>
+       .flame{
+           background-color: #111111;
+           width: 300px;
+           margin: 0 auto;
+           height: 150px;
+       }
+       .screen{
+           background-color: #DDDDDD;
+           width:80%;
+           height: 70px;
+           margin:auto ;
+           position: relative;
+           box-sizing: border-box;
+           top: 30px;
+       }
+       #display{
+           text-align: center;
+           font-size: 30px;
+           position: relative;
+           top:16px;
+       }
+       button{
+           position: relative;
+           margin-top:10px;
+       }
+       #start{
+           left: 10px;
+           margin-left: 
+       }
+       #reset{
+           right: 0px;
+           margin-left: 16px;
+       }
+       #stop{
+           left:13px
+       }
+   </style>
+   <script>
+        var rest_time = 12 ;
+        var interval_id;
+        var start_frag = false;
+        function count_time() {
+            console.log(rest_time);
+            if(rest_time>1){
+                rest_time--;
+                console.log(rest_time);
+                var minute = Math.floor(rest_time/60);
+                var second = '0'+ rest_time%60;
+                // var zero = '0'
+                var timer = document.getElementById('display');
+                timer.innerHTML = '0'+minute+':'+second.substr(-2,2);
+                // if (second >=10){
+                //     timer.innerHTML　= '0'+minute+':'+second;
+                // }
+                // else {
+                //     timer.innerHTML　= '0'+minute+':'+ zero +second;
+                // }
+            }
+            else{
+                var timer = document.getElementById('display');
+                timer.innerHTML　= 'time over';
+                clearInterval(interval_id);
+            }
+        }
+        function count_start(){
+            if(start_frag === false){
+                interval_id = setInterval(count_time,1000);
+                start_frag = true;
+            }
+        }
+        function count_stop(){
+            clearInterval(interval_id);
+            start_frag = false;
+        }
+        function count_reset(){
+            rest_time = 180;
+            var timer = document.getElementById('display');
+            timer.innerHTML　= '03:00';
+        }
+        window.onload = function(){
+            var start_button = document.getElementById('start');
+            var stop_button = document.getElementById('stop');
+            var reset_button = document.getElementById('reset');
+            start_button.addEventListener('click',count_start,false);
+            stop_button.addEventListener('click',count_stop,false);
+            reset_button.addEventListener('click',count_reset,false);
+        }
+
+   </script>
+</head>
+<body>
+    <div class="flame">
+        <div class="screen">
+            <p id ="display">03:00</p>
+            <button id="start">スタート</button>
+            <button id="stop">ストップ</button>
+            <button id="reset">リセット</button>
+        </div>
+    </div>
+</body>
+</html>
