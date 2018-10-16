@@ -17,6 +17,7 @@ body{
     font-family: arial, sans-serif;
     z-index: 100;
     display: block;
+    text-align: center;
 }
 .page_title{
     top:17%;
