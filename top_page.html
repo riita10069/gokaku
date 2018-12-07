@@ -47,15 +47,27 @@
         </nav>
 
         <div class="box">
-            
-            <video autoplay loop muted type="video/mp4" class="fitImg hidden-sm hidden-xs" src="images/math_chalkbord.mp4" alt="">
-                <div class="box__centered">
-                    <div class="box__contents">
-                    </div>
-                    <!--box__contents-->
-                </div>
-                <!--box__centered-->
-            </video>
+            <script>
+            $(function(){
+                var width = $(window).width;
+                if (width > 400) {
+                    $.ajax({
+                        url:"./top_image1.php",
+                        success:function(data){
+                            document.write(data);
+                        }
+                    })
+                } else{
+                    $.ajax({
+                        url:"./top_image2.php",
+                        success:function(data){
+                            document.write(data);
+                        }
+                    })
+                }
+            })    
+            </script>
+
             <h2 class="box__title hidden-xs hidden-sm ef" data-in-effect="rotateInUpLeft">Tokyo Insutitute of Technology</h2>
             <h2 class="box__title visible-xs visible-sm ef" data-in-effect="rotateInUpLeft">Tokyo Insutitute of Technology</h2>
             <h1 class="box__section box__title hidden-sm hidden-xs ef" data-in-effect="fadeInUpBig">現役東工大生が東工大受験生に東工大入試と東工大の学生生活について語ります。</h1>
