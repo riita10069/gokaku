@@ -10,7 +10,6 @@
     <link href="css/top_page.css" rel="stylesheet">
     <link href="assets/animate.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    
 </head>
 
 <body>
@@ -49,26 +48,32 @@
         </nav>
 
         <div class="box">
-            <script>
-            $(function(){
-                var width = $(window).width;
-                if (width > 400) {
-                    $.ajax({
-                        url:"./top_image1.php",
-                        success:function(data){
-                            document.write(data);
-                        }
-                    })
-                } else{
-                    $.ajax({
-                        url:"./top_image2.php",
-                        success:function(data){
-                            document.write(data);
-                        }
-                    })
-                }
-            })    
-            </script>
+            <!-- <script>
+                $(function(){
+                    var width = $(window).width;
+                    if (width > 400) {
+                        $.ajax({
+                            url:"./top_image1.php",
+                            success:function(data){
+                                document.write(data);
+                            }
+                        })
+                    } else{
+                        $.ajax({
+                            url:"./top_image2.php",
+                            success:function(data){
+                                document.write(data);
+                            }
+                        })
+                    }
+                })    
+            </script> -->
+            <video autoplay loop muted playsinline type="video/mp4" class="fitImg" src="images/math_chalkbord.mp4" alt="">
+                <div class="box__centered">
+                    <div class="box__contents">
+                    </div>
+                </div>
+            </video>
 
             <h2 class="box__title hidden-xs hidden-sm ef" data-in-effect="rotateInUpLeft">Tokyo Insutitute of Technology</h2>
             <h2 class="box__title visible-xs visible-sm ef" data-in-effect="rotateInUpLeft">Tokyo Insutitute of Technology</h2>
